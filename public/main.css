@@ -1,0 +1,175 @@
+
+/* https://animate.style/ */
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 60%, 0);
+    transform: translate3d(0, 60%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 60%, 0);
+    transform: translate3d(0, 60%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeInOut {
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 0;
+  }
+  20%,75% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInOut {
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 0;
+  }
+  20%,75% {
+    opacity: 1;
+  }
+}
+
+/**/
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  text-align: center;
+}
+
+#screen {
+  position: relative;
+  width: 400px;
+  height: 640px;
+  margin: 20px auto;
+  border: 1px solid grey;
+  overflow: hidden;
+}
+
+#stream {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#stream video {
+  width: 400px;
+}
+
+#messages {
+  height: 242px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2px 6px;
+  color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  font-size: 16px;
+  /* border-top: 1px solid red; */
+}
+
+.message {
+  padding: 4px 10px;
+  margin-bottom: 8px;
+  width: fit-content;
+  line-height: 2em;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0, 0.75);
+  text-align: left;
+  
+  user-select: none;
+}
+.message.g {
+  background-color: rgb(254, 254, 254, 0.75);
+  color: black;
+}
+.message.ag {
+  background-color: rgb(255, 191, 0, 0.75);
+  color: black;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .message {
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+  }
+  .message.g {
+    background-color: rgb(254, 254, 254, 0.5);
+  }
+  .message.ag {
+    background-color: rgb(255, 191, 0, 0.5);
+  }
+}
+.message.animated {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.message.partial {
+  opacity: 0.5;
+}
+
+.message .user {
+  display: inline-block;
+  font-weight: bold;
+}
+.message .userImage {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  border-radius: 14px;
+  background-size: 100%;
+  background-position: center;
+  margin: 0 0 -8px -4px;
+}
+
+#animatedGift {
+  width: 400px;
+  height: 640px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 140px;
+  line-height: 640px;
+  
+  background: rgb(255,191,0);
+  background: radial-gradient(circle, rgba(255,191,0,1) 0%, rgba(255,255,255,0) 75%);
+  
+  opacity: 0;
+  user-select: none;
+}
+
+#animatedGift.animated {
+  -webkit-animation-name: fadeInOut;
+  animation-name: fadeInOut;
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

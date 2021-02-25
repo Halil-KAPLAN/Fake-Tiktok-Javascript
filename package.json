@@ -1,0 +1,13 @@
+{
+  "name": "web-feb-2021",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "npm start",
+    "serve": "npm start",
+    "start": "live-server --port=8080 --no-browser public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
