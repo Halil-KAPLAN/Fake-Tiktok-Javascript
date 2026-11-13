@@ -8,6 +8,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.2"
+  },
+  "overrides": {
+    "chokidar": "^3.6.0",
+    "braces": "^3.0.3",
+    "send": "^0.19.0",
+    "morgan": "^1.12.1",
+    "on-headers": "^1.1.0",
+    "http-auth": "^4.2.1",
+    "uuid": "^11.1.1",
+    "websocket-driver": "^0.7.5"
   }
 }
